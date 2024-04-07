@@ -15,7 +15,7 @@ function CreateUser() {
     },
     onSubmit:async (data)=>{
         try {
-            await axios.post("https://65ccba76dd519126b83f66c0.mockapi.io/datas",data)
+            await axios.post("http://localhost:3003/users",data)
             alert("data posted")
         }
          catch (error) {

@@ -6,7 +6,7 @@ function Users() {
     const [details, setDetails] = useState([])
     async function getData() {
         try {
-            var data1 = await axios.get("https://65ccba76dd519126b83f66c0.mockapi.io/datas")
+            var data1 = await axios.get("http://localhost:3003/users")
             setDetails([...data1.data])
         } catch (error) {
             console.log(error)

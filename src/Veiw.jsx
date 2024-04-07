@@ -7,7 +7,7 @@ function Veiw() {
     const params = useParams()
     async function getData() {
         try {
-            const details = await axios.get(`https://65ccba76dd519126b83f66c0.mockapi.io/datas/${params.id}`)
+            const details = await axios.get(`http://localhost:3003/users/${params.id}`)
             setUsers(details.data)
         } catch (error) {
             console.log(error)
