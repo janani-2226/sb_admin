@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { Link, isRouteErrorResponse } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 function Users() {
     const [details, setDetails] = useState([])
     async function getData() {
         try {
-            var data1 = await axios.get("http://localhost:3003/users")
+            var data1 = await axios.get("http://localhost:3005/users")
             setDetails([...data1.data])
         } catch (error) {
             console.log(error)
@@ -17,8 +17,8 @@ function Users() {
     }, [])
     let  handleDelete=async(id)=> {
 try {
-    await axios.delete(`https://65ccba76dd519126b83f66c0.mockapi.io/datas/${id}`)
-    alert("jash burried")
+    await axios.delete(`http://localhost:3005/users/${id}`)
+    alert("User Deleted")
     getData()
 } catch (error) {
     console.log(error)
@@ -59,10 +59,10 @@ try {
                                             <td>{e.Designation}</td>
                                             <td>{e.Salary}</td>
                                             <td>{e.Location}</td>
-                                            <td><Link className='btn btn-primary ml-2' to={`/veiw/${e.id}`}> view </Link>
-                                                <Link className='btn btn-secondary ml-2' to={`/edit/${e.id}`}>edit</Link>
+                                            <td><Link className='btn btn-primary ml-2' to={`/veiw/${e._id}`}> view </Link>
+                                                <Link className='btn btn-secondary ml-2' to={`/edit/${e._id}`}>edit</Link>
                                                 <button className='btn btn-danger  ml-2' onClick={() => {
-                                                    handleDelete(e.id)
+                                                    handleDelete(e._id)
                                                 }}>delete</button></td>
                                         </tr>)
                                     })

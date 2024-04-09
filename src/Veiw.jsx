@@ -7,7 +7,7 @@ function Veiw() {
     const params = useParams()
     async function getData() {
         try {
-            const details = await axios.get(`http://localhost:3003/users/${params.id}`)
+            const details = await axios.get(`http://localhost:3005/users/${params.id}`)
             setUsers(details.data)
         } catch (error) {
             console.log(error)

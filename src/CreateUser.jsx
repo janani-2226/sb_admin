@@ -13,10 +13,11 @@ function CreateUser() {
         Designation:"",
         Location:"",
     },
-    onSubmit:async (data)=>{
+    onSubmit:async (data,formik)=>{
         try {
-            await axios.post("http://localhost:3003/users",data)
+            await axios.post("http://localhost:3005/users",data)
             alert("data posted")
+            formik.resetForm()
         }
          catch (error) {
             console.log(error)
@@ -41,7 +42,7 @@ function CreateUser() {
                <label typeof="text" className='form-label'>LastName</label>
                <input type="text" className='form-control'
                name='LastName'
-               value={formik.values.LastNametName}
+               value={formik.values.LastName}
                onChange={formik.handleChange}
                />
             </div>
