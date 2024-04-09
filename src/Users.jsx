@@ -6,7 +6,7 @@ function Users() {
     const [details, setDetails] = useState([])
     async function getData() {
         try {
-            var data1 = await axios.get("http://localhost:3005/users")
+            var data1 = await axios.get("https://demo-1-ttrc.onrender.com/users")
             setDetails([...data1.data])
         } catch (error) {
             console.log(error)
@@ -17,7 +17,7 @@ function Users() {
     }, [])
     let  handleDelete=async(id)=> {
 try {
-    await axios.delete(`http://localhost:3005/users/${id}`)
+    await axios.delete(`https://demo-1-ttrc.onrender.com/users/${id}`)
     alert("User Deleted")
     getData()
 } catch (error) {

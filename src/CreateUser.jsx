@@ -15,7 +15,7 @@ function CreateUser() {
     },
     onSubmit:async (data,formik)=>{
         try {
-            await axios.post("http://localhost:3005/users",data)
+            await axios.post("https://demo-1-ttrc.onrender.com/users",data)
             alert("data posted")
             formik.resetForm()
         }
