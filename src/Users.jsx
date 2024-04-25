@@ -6,8 +6,10 @@ function Users() {
     const [details, setDetails] = useState([])
     async function getData() {
         try {
-            var data1 = await axios.get("https://demo-1-ttrc.onrender.com/users")
+            // var data1 = await axios.get("https://demo-1-ttrc.onrender.com/users",);
+            var data1 = await axios.get("http://localhost:3005/users",);
             setDetails([...data1.data])
+            console.log(details)
         } catch (error) {
             console.log(error)
         }
@@ -42,10 +44,10 @@ try {
                                 <tr>
                                     <th>FirstName</th>
                                     <th>LastName</th>
+                                    <th>RollNumber</th>
+                                    <th>Department</th>
+                                    <th>MobileNumber</th>
                                     <th>Email</th>
-                                    <th>Designation</th>
-                                    <th>Salary</th>
-                                    <th>Location</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -55,10 +57,10 @@ try {
                                         return (<tr>
                                             <td>{e.FirstName}</td>
                                             <td>{e.LastName}</td>
+                                            <td>{e.RollNumber}</td>
+                                            <td>{e.Department}</td>
+                                            <td>{e.MobileNumber}</td>
                                             <td>{e.Email}</td>
-                                            <td>{e.Designation}</td>
-                                            <td>{e.Salary}</td>
-                                            <td>{e.Location}</td>
                                             <td><Link className='btn btn-primary ml-2' to={`/veiw/${e._id}`}> view </Link>
                                                 <Link className='btn btn-secondary ml-2' to={`/edit/${e._id}`}>edit</Link>
                                                 <button className='btn btn-danger  ml-2' onClick={() => {
