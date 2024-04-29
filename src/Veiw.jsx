@@ -7,9 +7,11 @@ function Veiw() {
     const params = useParams()
     async function getData() {
         try {
-            const details = await axios.get(`https://demo-1-ttrc.onrender.com/users/${params.id}`)
+            const details = await axios.get(`http://localhost:3005/users/${params.id}`)
             setUsers(details.data)
-        } catch (error) {
+            console.log(details.data)
+        }
+ catch (error) {
             console.log(error)
         }
     }
@@ -26,16 +28,31 @@ function Veiw() {
                 {user?.LastName}
             </li>
             <li>
+                {user?.RollNumber}
+            </li>
+            <li>
+                {user?.Department}
+            </li>
+            <li>
+                {user?.Year}
+            </li>
+            <li>
                 {user?.Email}
             </li>
             <li>
-                {user?.Designation}
+                {user?.MobileNumber}
             </li>
             <li>
-                {user?.Salary}
+                {user?.ParentsName}
             </li>
             <li>
-                {user?.Location}
+                {user?.DOB}
+            </li>
+            <li>
+                {user?.BloodGroup}
+            </li>
+            <li>
+                {user?.Address}
             </li>
          </ul>
         </>

@@ -17,7 +17,7 @@ function Edit() {
     },
     onSubmit: async (values) => {
       try {
-       let data = await axios.put(`https://demo-1-ttrc.onrender.com/users/${params.id}`, values)
+       let data = await axios.put(`http://localhost:3005/users/${params.id}`, values)
         alert("UPDATED")
       } catch (error) {
         console.log(error)
@@ -27,7 +27,7 @@ function Edit() {
   })
   async function getData() {
     try {
-      const data1 = await axios.get(`https://demo-1-ttrc.onrender.com/users/${params.id}`)
+      const data1 = await axios.get(`http://localhost:3005/users/${params.id}`)
       delete data1.data._id
       formik.setValues(data1.data)
 
@@ -61,34 +61,67 @@ function Edit() {
               />
             </div>
             <div className='col-lg-6'>
+              <label typeof="text" className='form-label'>RollNumber</label>
+              <input type="text" className='form-control'
+                name='RollNumber'
+                value={formik.values.RollNumber}
+                onChange={formik.handleChange}
+              />
+            </div>
+            <div className='col-lg-6'>
+              <label typeof="text" className='form-label'>Department</label>
+              <input type="text" className='form-control'
+                name='Department'
+                value={formik.values.Department}
+                onChange={formik.handleChange}
+              />
+            </div>
+            <div className='col-lg-6'>
+              <label typeof="text" className='form-label'>Year</label>
+              <input type="text" className='form-control'
+                name='Year'
+                value={formik.values.Year}
+                onChange={formik.handleChange}
+              />
+            </div>
+            <div className='col-lg-6'>
               <label typeof="text" className='form-label'>Email</label>
               <input type="text" className='form-control'
                 name='Email'
                 value={formik.values.Email}
-                onChange={formik.handleChange}
-              />
+                onChange={formik.handleChange} />
             </div>
             <div className='col-lg-6'>
-              <label typeof="text" className='form-label'>Designation</label>
+              <label typeof="text" className='form-label'>MobileNumber</label>
               <input type="text" className='form-control'
-                name='Designation'
-                value={formik.values.Designation}
-                onChange={formik.handleChange}
-              />
+                name='MobileNumber'
+                value={formik.values.MobileNumber}
+                onChange={formik.handleChange} />
             </div>
             <div className='col-lg-6'>
-              <label typeof="text" className='form-label'>Salary</label>
+              <label typeof="text" className='form-label'>ParentsName</label>
               <input type="text" className='form-control'
-                name='Salary'
-                value={formik.values.Salary}
-                onChange={formik.handleChange}
-              />
+                name='ParentsName'
+                value={formik.values.ParentsName}
+                onChange={formik.handleChange} />
             </div>
             <div className='col-lg-6'>
-              <label typeof="text" className='form-label'>Location</label>
+              <label typeof="text" className='form-label'>DOB</label>
               <input type="text" className='form-control'
-                name='Location'
-                value={formik.values.Location}
+                name='DOB'
+                value={formik.values.DOB}
+                onChange={formik.handleChange} />
+            </div><div className='col-lg-6'>
+              <label typeof="text" className='form-label'>BloodGroup</label>
+              <input type="text" className='form-control'
+                name='BloodGroup'
+                value={formik.values.BloodGroup}
+                onChange={formik.handleChange} />
+            </div><div className='col-lg-6'>
+              <label typeof="text" className='form-label'>Address</label>
+              <input type="text" className='form-control'
+                name='Address'
+                value={formik.values.Address}
                 onChange={formik.handleChange} />
             </div>
             <div className='col-lg-6 mt-4'>

@@ -1,4 +1,6 @@
 import React from 'react'
+import overview from './overview.png'
+import chart from './chart.png'
 
 function Dashboard() {
     return (
@@ -9,7 +11,22 @@ function Dashboard() {
                     class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
             </div>
             <div class="row">
-
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Earnings (Weekly)</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">$10,000</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card border-left-primary shadow h-100 py-2">
                         <div class="card-body">
@@ -26,6 +43,7 @@ function Dashboard() {
                         </div>
                     </div>
                 </div>
+
                 <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card border-left-success shadow h-100 py-2">
                         <div class="card-body">
@@ -42,8 +60,32 @@ function Dashboard() {
                         </div>
                     </div>
                 </div>
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-success shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                        Target (Annual)</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">$200,000</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
+            <div className='row '>
+                <div className='col-lg-6 '>
+                    <img src={overview} alt="" className='img' />
+                </div>
+                <div className='col-lg-6'>
+                    <img src={chart} alt="" className='imgs' />
+                </div>
+            </div>
+
         </>
     )
 }
