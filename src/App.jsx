@@ -22,7 +22,7 @@ function App() {
               <NavBar></NavBar>
               <div class="container-fluid">
                 <Routes>
-                  <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
+                  <Route path="/" element={<Dashboard></Dashboard>}></Route>
                   <Route path="/users" element={<Users></Users>}></Route> 
                   <Route path="/createusers" element={<CreateUser></CreateUser>}></Route> 
                   <Route path="/veiw/:id" element={<Veiw></Veiw>}></Route>
