@@ -15,7 +15,7 @@ function SideBar() {
 
                 <hr class="sidebar-divider my-0" />
                 <li class="nav-item active">
-                    <Link class="nav-link" to="/dashboard">
+                    <Link class="nav-link" to="/">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Dashboard</span></Link>
                 </li>
