@@ -1,22 +1,33 @@
 import React from 'react'
+import { useState } from 'react';
 import { Formik, useFormik } from 'formik'
 import axios from 'axios'
 
 
 function CreateUser() {
+   const [file, setFile] = useState();
+    function handleChange(e) {
+        console.log(e.target.files);
+        setFile(URL.createObjectURL(e.target.files[0]));
+    }
    const formik = useFormik({
       initialValues: {
-         FirstName: "",
-         LastName: "",
-         RollNumber: "",
-         Department: " ",
-         Year: "",
-         Email: "",
-         MobileNumber: "",
-         ParentsName: "",
-         DOB: "",
-         BloodGroup: "",
-         Address: "",
+         // FirstName: "",
+         // LastName: "",
+         // RollNumber: "",
+         // Department: " ",
+         // Year: "",
+         // Email: "",
+         // MobileNumber: "",
+         // ParentsName: "",
+         // DOB: "",
+         // BloodGroup: "",
+         // Address: "",
+         Title:"",
+         ProjectImage:"",
+         OriginalPrice:"",
+         OfferPrice:"",
+         SellingPrice:"",
       },
       // validate: (values) => {
       //    let errors = {};
@@ -77,51 +88,56 @@ function CreateUser() {
             <div className='container'>
                <div className='row'>
                   <div className='col-lg-6'>
-                     <label typeof="text" className='form-label'>FirstName</label>
+                     <label typeof="text" className='form-label'>Title</label>
                      <input type="text" className='form-control'
-                        name='FirstName'
-                        value={formik.values.FirstName}
+                        name='Title'
+                        value={formik.values.Title}
                         onChange={formik.handleChange}
                      />
-                     <span style={{ color:" red" }}>{formik.errors.FirstName}</span>
+                     <span style={{ color:" red" }}>{formik.errors.Title}</span>
+                  </div>
+                  <div className="col-lg-6">
+                  <p>Add Image:</p>
+                  <input type="file" onChange={handleChange} />
+                   <img src={file} />
                   </div>
                   <div className='col-lg-6'>
-                     <label typeof="text" className='form-label'>LastName</label>
+                     <label typeof="text" className='form-label'>Project Image</label>
                      <input type="text" className='form-control'
-                        name='LastName'
-                        value={formik.values.LastName}
+                        name='ProjectImage'
+                        value={formik.values.ProjectImage}
                         onChange={formik.handleChange}
                      />
-                     <span style={{ color:" red" }}>{formik.errors.LastName}</span>
+                     <span style={{ color:" red" }}>{formik.errors.ProjectImage}</span>
                   </div>
                   <div className='col-lg-6'>
-                     <label typeof="text" className='form-label'>RollNumber</label>
+                     <label typeof="text" className='form-label'>Original Price</label>
                      <input type="text" className='form-control'
-                        name='RollNumber'
-                        value={formik.values.RollNumber}
+                        name='OriginalPrice'
+                        value={formik.values.OriginalPrice}
                         onChange={formik.handleChange}
                      />
-                     <span style={{ color:" red" }}>{formik.errors.RollNumber}</span>
+                     <span style={{ color:" red" }}>{formik.errors.OriginalPrice}</span>
                   </div>
                   <div className='col-lg-6'>
-                     <label typeof="text" className='form-label'>Department</label>
+                     <label typeof="text" className='form-label'>Selling Price</label>
                      <input type="text" className='form-control'
-                        name='Department'
-                        value={formik.values.Department}
+                        name='SellingPrice'
+                        value={formik.values.SellingPrice}
                         onChange={formik.handleChange}
                      />
-                     <span style={{ color:" red" }}>{formik.errors.Department}</span>
+                     <span style={{ color:" red" }}>{formik.errors.SellingPrice}</span>
                   </div>
                   <div className='col-lg-6'>
-                     <label typeof="text" className='form-label'>Year</label>
+                     <label typeof="text" className='form-label'>Description</label>
                      <input type="text" className='form-control'
-                        name='Year'
-                        value={formik.values.Year}
+                        name='Description'
+                        value={formik.values.Description}
                         onChange={formik.handleChange}
                      />
-                     <span style={{ color:" red" }}>{formik.errors.Year}</span>
+                     <span style={{ color:" red" }}>{formik.errors.Description}</span>
                   </div>
-                  <div className='col-lg-6'>
+                  {/* <div className='col-lg-6'>
                      <label typeof="text" className='form-label'>Email</label>
                      <input type="text" className='form-control'
                         name='Email'
@@ -129,7 +145,7 @@ function CreateUser() {
                         onChange={formik.handleChange}
                      />
                      <span style={{ color:" red" }}>{formik.errors.Email}</span>
-                  </div>
+                  </div> 
                   <div className='col-lg-6'>
                      <label typeof="text" className='form-label'>MobileNumber</label>
                      <input type="text" className='form-control'
@@ -170,8 +186,8 @@ function CreateUser() {
                         value={formik.values.Address}
                         onChange={formik.handleChange} />
                      <span style={{ color:" red" }}>{formik.errors.Address}</span>
-                  </div>
-                  <div className='col-lg-6 mt-4'>
+                  </div> */}
+                  <div className='col-lg-12 mt-4'>
                      <button className='btn btn-primary'>Submit</button>
                   </div>
                </div>
