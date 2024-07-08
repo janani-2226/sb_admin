@@ -58,8 +58,8 @@ try {
                                             <td>{e.Title}</td>
                                             <td><img src={e.ProjectImage} alt={e.Title} width="100" /></td>
                                             <td>{e.OriginalPrice}</td>
-                                            <td>{e.OfferPrice}</td>
                                             <td>{e.SellingPrice}</td>
+                                            <td>{e.Description}</td>
                                             {/* <td>{e.Email}</td> */}
                                             <td><Link className='btn btn-primary ml-2' to={`/veiw/${e._id}`}> view </Link>
                                                 <Link className='btn btn-secondary ml-2' to={`/edit/${e._id}`}>edit</Link>
