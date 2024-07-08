@@ -56,7 +56,7 @@ try {
                                     details.map((e) => {
                                         return (<tr>
                                             <td>{e.Title}</td>
-                                            <td>{e.ProjectImage}</td>
+                                            <td><img src={e.ProjectImage} alt={e.Title} width="100" /></td>
                                             <td>{e.OriginalPrice}</td>
                                             <td>{e.OfferPrice}</td>
                                             <td>{e.SellingPrice}</td>

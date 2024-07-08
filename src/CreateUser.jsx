@@ -97,11 +97,11 @@ function CreateUser() {
                      <span style={{ color:" red" }}>{formik.errors.Title}</span>
                   </div>
                   <div className="col-lg-6">
-                  <p>Add Image:</p>
+                  <p>Project Image:</p>
                   <input type="file" onChange={handleChange} />
                    <img src={file} />
                   </div>
-                  <div className='col-lg-6'>
+                  {/* <div className='col-lg-6'>
                      <label typeof="text" className='form-label'>Project Image</label>
                      <input type="text" className='form-control'
                         name='ProjectImage'
@@ -109,7 +109,7 @@ function CreateUser() {
                         onChange={formik.handleChange}
                      />
                      <span style={{ color:" red" }}>{formik.errors.ProjectImage}</span>
-                  </div>
+                  </div> */}
                   <div className='col-lg-6'>
                      <label typeof="text" className='form-label'>Original Price</label>
                      <input type="text" className='form-control'
