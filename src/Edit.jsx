@@ -8,12 +8,17 @@ function Edit() {
   const params = useParams()
   const formik = useFormik({
     initialValues: {
-      FirstName: "",
-      LastName: "",
-      Email: "",
-      Salary: "",
-      Designation: "",
-      Location: "",
+      // FirstName: "",
+      // LastName: "",
+      // Email: "",
+      // Salary: "",
+      // Designation: "",
+      // Location: "",
+      Title:"",
+      ProjectImage:"",
+      OriginalPrice:"",
+      OfferPrice:"",
+      SellingPrice:"",
     },
     onSubmit: async (values) => {
       try {
@@ -45,45 +50,50 @@ function Edit() {
         <div className='container'>
           <div className='row'>
             <div className='col-lg-6'>
-              <label typeof="text" className='form-label'>FirstName</label>
+              <label typeof="text" className='form-label'>Title</label>
               <input type="text" className='form-control'
-                name='FirstName'
-                value={formik.values.FirstName}
+                name='Title'
+                value={formik.values.Title}
                 onChange={formik.handleChange}
               />
             </div>
             <div className='col-lg-6'>
-              <label typeof="text" className='form-label'>LastName</label>
+                            <label className='form-label'>Project Image</label>
+                            <input type="file" className='form-control' onChange={handleChange} />
+                            {fileUrl && <img src={fileUrl} alt="Preview" width="100" />}
+                        </div>
+            {/* <div className='col-lg-6'>
+              <label typeof="text" className='form-label'>Project Image</label>
               <input type="text" className='form-control'
                 name='LastName'
                 value={formik.values.LastName}
                 onChange={formik.handleChange}
-              />
+              /> */}
             </div>
             <div className='col-lg-6'>
-              <label typeof="text" className='form-label'>RollNumber</label>
+              <label typeof="text" className='form-label'>Original Price</label>
               <input type="text" className='form-control'
-                name='RollNumber'
-                value={formik.values.RollNumber}
+                name='OriginalPrice'
+                value={formik.values.OriginalPrice}
                 onChange={formik.handleChange}
               />
             </div>
             <div className='col-lg-6'>
-              <label typeof="text" className='form-label'>Department</label>
+              <label typeof="text" className='form-label'>Selling Price</label>
               <input type="text" className='form-control'
-                name='Department'
-                value={formik.values.Department}
+                name='SellingPrice'
+                value={formik.values.SellingPrice}
                 onChange={formik.handleChange}
               />
             </div>
             <div className='col-lg-6'>
-              <label typeof="text" className='form-label'>Year</label>
+              <label typeof="text" className='form-label'>Description</label>
               <input type="text" className='form-control'
-                name='Year'
-                value={formik.values.Year}
+                name='Description'
+                value={formik.values.Description}
                 onChange={formik.handleChange}
               />
-            </div>
+          {/*</div>
             <div className='col-lg-6'>
               <label typeof="text" className='form-label'>Email</label>
               <input type="text" className='form-control'
@@ -123,7 +133,7 @@ function Edit() {
                 name='Address'
                 value={formik.values.Address}
                 onChange={formik.handleChange} />
-            </div>
+            </div> */}
             <div className='col-lg-6 mt-4'>
               <button className='btn btn-primary'>Submit</button>
             </div>
