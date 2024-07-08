@@ -35,7 +35,7 @@ try {
             </div>
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Product Data Table</h6>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -56,7 +56,14 @@ try {
                                     details.map((e) => {
                                         return (<tr>
                                             <td>{e.Title}</td>
-                                            <td><img src={e.ProjectImage} alt={e.Title} width="100" /></td>
+                                            {/* <td><img src={e.ProjectImage} alt={e.Title} width="100" /></td> */}
+                                            <img
+                                                    src={e.ProjectImage}
+                                                    alt={e.Title}
+                                                    width="100"
+                                                    style={{ cursor: 'pointer' }}
+                                                    onClick={() => handleImageClick(e.ProjectImage)}
+                                                />
                                             <td>{e.OriginalPrice}</td>
                                             <td>{e.SellingPrice}</td>
                                             <td>{e.Description}</td>
