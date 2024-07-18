@@ -12,22 +12,17 @@ function CreateUser() {
     }
    const formik = useFormik({
       initialValues: {
-         // FirstName: "",
-         // LastName: "",
-         // RollNumber: "",
-         // Department: " ",
-         // Year: "",
-         // Email: "",
-         // MobileNumber: "",
-         // ParentsName: "",
-         // DOB: "",
-         // BloodGroup: "",
-         // Address: "",
-         Title:"",
-         ProjectImage:"",
-         OriginalPrice:"",
-         OfferPrice:"",
-         SellingPrice:"",
+         FirstName: "",
+         LastName: "",
+         RollNumber: "",
+         Department: " ",
+         Year: "",
+         Email: "",
+         MobileNumber: "",
+         ParentsName: "",
+         DOB: "",
+         BloodGroup: "",
+         Address: "",
       },
       // validate: (values) => {
       //    let errors = {};
@@ -88,61 +83,42 @@ function CreateUser() {
             <div className='container'>
                <div className='row'>
                   <div className='col-lg-6'>
-                     <label typeof="text" className='form-label'>Title</label>
+                     <label typeof="text" className='form-label'>FirstName</label>
                      <input type="text" className='form-control'
-                        name='Title'
-                        value={formik.values.Title}
+                        name='FirstName'
+                        value={formik.values.FirstName}
                         onChange={formik.handleChange}
                      />
-                     <span style={{ color:" red" }}>{formik.errors.Title}</span>
+                     <span style={{ color:" red" }}>{formik.errors.FirstName}</span>
                   </div>
                   <div className='col-lg-6'>
-                            <label className='form-label'>Project Image</label>
-                            <input type="file" className='form-control' onChange={handleChange} />
-                            {fileUrl && <img src={fileUrl} alt="Preview" width="100" />}
-                        </div>
-                  {/* <div className="col-lg-6">
-                  <p>Project Image:</p>
-                  <input type="file" onChange={handleChange} />
-                   <img src={file} />
-                  </div> */}
-                  {/* <div className='col-lg-6'>
-                     <label typeof="text" className='form-label'>Project Image</label>
+                     <label typeof="text" className='form-label'>LastName</label>
                      <input type="text" className='form-control'
-                        name='ProjectImage'
-                        value={formik.values.ProjectImage}
+                        name='LastName'
+                        value={formik.values.LastName}
                         onChange={formik.handleChange}
                      />
-                     <span style={{ color:" red" }}>{formik.errors.ProjectImage}</span>
-                  </div> */}
-                  <div className='col-lg-6'>
-                     <label typeof="text" className='form-label'>Original Price</label>
-                     <input type="text" className='form-control'
-                        name='OriginalPrice'
-                        value={formik.values.OriginalPrice}
-                        onChange={formik.handleChange}
-                     />
-                     <span style={{ color:" red" }}>{formik.errors.OriginalPrice}</span>
+                     <span style={{ color:" red" }}>{formik.errors.LastName}</span>
                   </div>
                   <div className='col-lg-6'>
-                     <label typeof="text" className='form-label'>Selling Price</label>
+                     <label typeof="text" className='form-label'>RollNumber</label>
                      <input type="text" className='form-control'
-                        name='SellingPrice'
-                        value={formik.values.SellingPrice}
+                        name='RollNumber'
+                        value={formik.values.RollNumber}
                         onChange={formik.handleChange}
                      />
-                     <span style={{ color:" red" }}>{formik.errors.SellingPrice}</span>
+                     <span style={{ color:" red" }}>{formik.errors.RollNumber}</span>
                   </div>
                   <div className='col-lg-6'>
-                     <label typeof="text" className='form-label'>Description</label>
+                     <label typeof="text" className='form-label'>Department</label>
                      <input type="text" className='form-control'
-                        name='Description'
-                        value={formik.values.Description}
+                        name='Department'
+                        value={formik.values.Department}
                         onChange={formik.handleChange}
                      />
-                     <span style={{ color:" red" }}>{formik.errors.Description}</span>
+                     <span style={{ color:" red" }}>{formik.errors.Department}</span>
                   </div>
-                  {/* <div className='col-lg-6'>
+                  <div className='col-lg-6'>
                      <label typeof="text" className='form-label'>Email</label>
                      <input type="text" className='form-control'
                         name='Email'
@@ -191,7 +167,7 @@ function CreateUser() {
                         value={formik.values.Address}
                         onChange={formik.handleChange} />
                      <span style={{ color:" red" }}>{formik.errors.Address}</span>
-                  </div> */}
+                  </div> 
                   <div className='col-lg-12 mt-4'>
                      <button className='btn btn-primary'>Submit</button>
                   </div>
