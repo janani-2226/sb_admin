@@ -16,7 +16,8 @@ function Edit() {
     },
     onSubmit: async (values) => {
       try {
-       let data = await axios.put(`https://demo-1-ttrc.onrender.com/users/${params.id}`, values)
+      //  let data = await axios.put(`https://demo-1-ttrc.onrender.com/users/${params.id}`, values)
+       let data = await axios.put(`http://localhost:3005/users/${params.id}`, values)
         alert("UPDATED")
       } catch (error) {
         console.log(error)
@@ -26,7 +27,8 @@ function Edit() {
   })
   async function getData() {
     try {
-      const data1 = await axios.get(`https://demo-1-ttrc.onrender.com/users/${params.id}`)
+      // const data1 = await axios.get(`https://demo-1-ttrc.onrender.com/users/${params.id}`)
+      const data1 = await axios.get(`http://localhost:3005/users/${params.id}`)
       delete data1.data._id
       formik.setValues(data1.data)
 
@@ -134,3 +136,4 @@ function Edit() {
 }
 
 export default Edit
+// 
